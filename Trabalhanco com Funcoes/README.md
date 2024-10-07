@@ -135,19 +135,91 @@ function torrar(pao, nome){
 }
 ````
 
-- Podemos ter funções com parametros padrões, conforme abaixo e é sempre uma boa pratica deiar este parametro para o final, pois a função em js nao aceita parametro em branco no meio de parametros.
+- Podemos ter funções com parametros padrões, conforme abaixo e é sempre uma boa pratica deiar este parametro para o final, pois a função em js nao aceita parametro em branco no meio de parametros. Caos seja muito necessário ter no meio do fluxo, passar undefined.
 
 ````js
 //Função com parametro
 torrar("pão de forma", 10.90,  "felipe");
-torrar("pão integral", 10.90);
-torrar("pão integral");
+torrar("pão integral", 10.90, undefined);
+torrar("pão integral", 15.90);
 
 function torrar(pao,  valor, nome = "Cliente"){	
     console.log("torrada feita com " + pao);    
     console.log("ela é um pedido de " + nome);    
     console.log("O valor é de " + nome);  
 }
+````
+### Funções em outras linguagens
+
+- Python
+````Py
+def torrar(pao, valor, nome="Cliente"):
+    print(f"torrada feita com {pao}")
+    print(f"ela é um pedido de {nome}")
+    print(f"O valor é de {valor}")
+
+torrar("pão de forma", 10.90, "Felipe")
+torrar("pão integral", 10.90)
+torrar("pão integral", 15.90)
+````
+
+- Java
+````java
+public class Main {
+
+    public static void torrar(String pao, double valor, String nome) {
+        if (nome == null) {
+            nome = "Cliente";
+        }
+        System.out.println("torrada feita com " + pao);
+        System.out.println("ela é um pedido de " + nome);
+        System.out.println("O valor é de " + valor);
+    }
+
+    public static void main(String[] args) {
+        torrar("pão de forma", 10.90, "Felipe");
+        torrar("pão integral", 10.90, null);
+        torrar("pão integral", 15.90);
+    }
+}
+````
+- C#
+````C#
+using System;
+
+class Program {
+
+    static void Torrar(string pao, double valor, string nome = "Cliente") {
+        Console.WriteLine("torrada feita com " + pao);
+        Console.WriteLine("ela é um pedido de " + nome);
+        Console.WriteLine("O valor é de " + valor);
+    }
+
+    static void Main(string[] args) {
+        Torrar("pão de forma", 10.90, "Felipe");
+        Torrar("pão integral", 10.90);
+        Torrar("pão integral", 15.90);
+    }
+}
+````
+
+- Passar o texto sem concatenção com interpolação de strings:
+````js
+createStringConnection("db_products", "felipe", "9876")
+
+function createStringConnection(databaseName, user, pass){
+    console.log(`connect:DBCONNECT;user=${user};pass=${pass};initial_database=${databaseName}`)
+}
+````
+
+## Funções com retorno
+
+Funções com retorno são funções que retornam valores ou valores de saída para a tela. 
+
+- No exemplo da torradeira, a mesam pode ter uma saida
+
+````js
+function soma()
 ````
 -----
 Mapa de aventra: Material disponivel no notion, para ser utilizado com foco de organização e anotações de um fluxo de aprendizado. 
