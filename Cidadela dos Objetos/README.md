@@ -89,4 +89,107 @@ function generateInvoice(invoice){
 ````
 A vantagém é poder transferir um grupo de dados de um lado para o outro. 
 
-Json é um padrão universal de comunicação. Todas as linguagens entendem. 
+Json é um padrão universal de comunicação. Todas as linguagens entendem. Forma de dados de um lugar para outro.
+
+## Classes e Objetos
+
+Entendo a relação entre classe e objetos:
+
+Exemplo da vovó e de bolus:
+  - Fazer um bolo com uma forma. Temos 3 bolos diferentes (Morango, cenoura, creme de leite)
+  - Cada bolo tem suas caracteristicas próprias, mas são bolos.
+  - As formas, são classes.
+  - Dentro da forma, temos um objeto.
+  - A estrutura, o padrão é o mesmo. Com isto criamos um Objeto.
+  - Toda classe eu posso declarar um objeto da mesma.
+  - Instanciar um objeto é fazer um boloc com aquela forma.
+
+Exemplos de objeto: Celular, microfone, garrafa da agua e assim por diante.
+
+Uma pessoa é um objeto? No mundo real uma pessoa não é um objeto. 
+Na programação uma pessoa é um objeto. 
+
+- Exemplo de Objeto
+
+````ts
+class formaDeBolo {
+  saborDaMassa: string;
+  saborRecheio: string;
+
+  constructor(saborDaMassa: string, saborRecheio: string) {
+    this.saborDaMassa = saborDaMassa;
+    this.saborRecheio = saborRecheio;
+  }
+
+  escrever() {
+    console.log(`Um Delicioso bolo de ${this.saborDaMassa} com recheio de ${this.saborRecheio}`);
+  }
+}
+let boloPremium = new formaDeBolo("chocolate", "nutella");
+let boloFesta = new formaDeBolo("massa de chocolate", "Recheio de nutella");
+boloFesta.escrever();
+boloPremim.escrever();
+
+````
+
+## Diferença entre linguagens
+
+- Java
+````Java
+public class FormaDeBolo {
+    private String saborDaMassa;
+    private String saborRecheio;
+
+    public FormaDeBolo(String saborDaMassa, String saborRecheio) {
+        this.saborDaMassa = saborDaMassa;
+        this.saborRecheio = saborRecheio;
+    }
+
+    public void escrever() {
+        System.out.println("Um Delicioso bolo de " + saborDaMassa + " com recheio de " + saborRecheio);
+    }
+
+    public static void main(String[] args) {
+        FormaDeBolo boloFesta = new FormaDeBolo("massa de chocolate", "Recheio de nutella");
+        boloFesta.escrever();
+    }
+}
+````
+
+- Python
+````Python
+class FormaDeBolo:
+    def __init__(self, sabor_da_massa, sabor_recheio):
+        self.sabor_da_massa = sabor_da_massa
+        self.sabor_recheio = sabor_recheio
+
+    def escrever(self):
+        print(f"Um Delicioso bolo de {self.sabor_da_massa} com recheio de {self.sabor_recheio}")
+
+bolo_festa = FormaDeBolo("massa de chocolate", "Recheio de nutella")
+bolo_festa.escrever()
+````
+
+- C#
+````C#
+using System;
+
+public class FormaDeBolo {
+    private string saborDaMassa;
+    private string saborRecheio;
+
+    public FormaDeBolo(string saborDaMassa, string saborRecheio) {
+        this.saborDaMassa = saborDaMassa;
+        this.saborRecheio = saborRecheio;
+    }
+
+    public void Escrever() {
+        Console.WriteLine($"Um Delicioso bolo de {saborDaMassa} com recheio de {saborRecheio}");
+    }
+
+    public static void Main(string[] args) {
+        FormaDeBolo boloFesta = new FormaDeBolo("massa de chocolate", "Recheio de nutella");
+        boloFesta.Escrever();
+    }
+}
+````
